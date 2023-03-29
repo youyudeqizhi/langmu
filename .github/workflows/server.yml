@@ -21,6 +21,7 @@ jobs:
       - name: Install Dependency
         run: |
           npm install
+          npm install express
           npm install parse
           npm install got
           npm install xmlhttprequest
