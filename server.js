@@ -27,7 +27,13 @@ app.post("/api/setList", async (req, res) => {
   });
 });
 app.listen(3111, () => {
-  fs.writeFile("123.txt", "11111111111111888888888888888888222222222222");
+  fs.writeFile(
+    "123.txt",
+    "11111111111111888888888888888888222222222222",
+    () => {
+      console.log("yes");
+    }
+  );
 
   console.log("服务器启动成功");
 });
