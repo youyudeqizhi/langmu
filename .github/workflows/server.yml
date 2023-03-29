@@ -20,10 +20,11 @@ jobs:
 
       - name: Install Dependency
         run: |
-          npm install
-          npm install express
-          npm install parse
-          npm install got
-          npm install xmlhttprequest
-          npm install tough-cookie         
-          node ./server.js  # 要运行的js脚本，放在根目录下
+          node index.js
+          # npm install
+          # npm install express
+          # npm install parse
+          # npm install got
+          # npm install xmlhttprequest
+          # npm install tough-cookie         
+          # node ./server.js  # 要运行的js脚本，放在根目录下
