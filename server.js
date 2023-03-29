@@ -10,6 +10,27 @@ app.use(express.static("img"));
 app.use(express.urlencoded({ extended: false }));
 // 通过ap.listen进行服务器的配置，并启动服务器，接收两个配置参数，一个是对应的端口号，一个是启动成功的回调函数
 //get接口的开发
+
+/**
+ * 获取本机IP
+ * @return {String} 返回本机IP
+ */
+function getLocalIP() {
+  const os = require("os");
+  const ifaces = os.networkInterfaces();
+  let locatIp = "";
+  for (let dev in ifaces) {
+    if (dev === "本地连接" || dev === "以太网") {
+      for (let j = 0; j < ifaces[dev].length; j++) {
+        if (ifaces[dev][j].family === "IPv4") {
+          locatIp = ifaces[dev][j].address;
+          break;
+        }
+      }
+    }
+  }
+  return locatIp;
+}
 app.get("/api/list", (err, res) => {
   res.send({
     code: 200,
@@ -26,14 +47,6 @@ app.post("/api/setList", async (req, res) => {
     }
   });
 });
-app.listen(3111, () => {
-  fs.writeFile(
-    "123.txt",
-    "11111111111111888888888888888888222222222222",
-    () => {
-      console.log("yes");
-    }
-  );
-
-  console.log("服务器启动成功");
+app.listen(3111, (dat) => {
+  console.log("服务器启动成功", getLocalIP() + ":3111/api/setList");
 });
