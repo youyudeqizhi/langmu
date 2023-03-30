@@ -1,0 +1,1 @@
+import{d as a,c as s,a as r,b as e,o as t,r as n}from"./index-0a621254.js";const o={class:""},d=a({__name:"A",setup(a){const d=a=>{};return(a,c)=>{const u=n("van-uploader");return t(),s("div",o,[r(" 11111111111 "),e(u,{"after-read":d})])}}});export{d as default};
